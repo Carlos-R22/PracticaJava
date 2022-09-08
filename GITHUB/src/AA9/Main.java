@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +43,7 @@ HORIZON						50000					5
 
 public class Main {
 
-	public Main() throws IOException {
+	public static void main(String[]args) throws IOException {
 		// TODO Auto-generated constructor stub
 		
 		List<String> lista = new ArrayList();
@@ -52,8 +55,13 @@ public class Main {
 		Videojuegos a6 = new Videojuegos("DOOM 21455", 10, 52,0);
 		Videojuegos a7 = new Videojuegos("COOKING MAMA", 10000, 5,0);
 		
-		a1.gananciasT();
-		System.out.println(a1);
+		a1.setGananciasT((double)a1.getPrecio()*a1.getVenta());
+		a2.setGananciasT((double)a2.getPrecio()*a2.getVenta());
+		a3.setGananciasT((double)a3.getPrecio()*a3.getVenta());
+		a4.setGananciasT((double)a4.getPrecio()*a4.getVenta());
+		a5.setGananciasT((double)a5.getPrecio()*a5.getVenta());
+		a6.setGananciasT((double)a6.getPrecio()*a6.getVenta());
+		a7.setGananciasT((double)a7.getPrecio()*a7.getVenta());
 		
 		lista.add(a1.toString());
 		lista.add(a2.toString());
@@ -63,12 +71,16 @@ public class Main {
 		lista.add(a6.toString());
 		lista.add(a7.toString());
 		
+		
 		try {
-		FileWriter file = new FileWriter ("videojuegos.txt");
-		PrintWriter pw = new PrintWriter(file);
+		Path path = Paths.get("videojuegos.txt");
+		//FileWriter file = new FileWriter (path);
+		//PrintWriter pw = new PrintWriter(file);
 
+		Files.write(path, lista);
          for (Object l: lista)
-             pw.println(lista + " ganancias totales: " );
+        	 System.out.println(l);
+             //pw.println(lista);
 
 		}catch (Exception e) {
             e.printStackTrace();

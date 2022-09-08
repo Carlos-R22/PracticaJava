@@ -50,6 +50,7 @@ public class Videojuegos implements Ganancias{
 	
 
 	public double getGananciasT() {
+		gananciasT = precio*venta;
 		return gananciasT;
 	}
 
@@ -59,7 +60,7 @@ public class Videojuegos implements Ganancias{
 
 	@Override
 	public String toString() {
-		return "Videojuegos " + nombre + ", numero de ventas= " + venta + ", con precio= " + precio + "]";
+		return "Videojuegos " + nombre + ", numero de ventas= " + venta + ", con precio= " + precio + " ganancias totales: "+ gananciasT;
 	}
 
 	public double gananciasT(){

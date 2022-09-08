@@ -1,0 +1,7 @@
+Videojuegos DARK SOULS 3, numero de ventas= 10000, con precio= 5.0 ganancias totales: 50000.0
+Videojuegos MY LITTLE PONNY 5, numero de ventas= 250000, con precio= 10.0 ganancias totales: 2500000.0
+Videojuegos THE LAST OF US, numero de ventas= 50000, con precio= 15.0 ganancias totales: 750000.0
+Videojuegos FIFA 1999, numero de ventas= 100000, con precio= 7.5 ganancias totales: 750000.0
+Videojuegos PRINCES PEACH, numero de ventas= 125564, con precio= 1.0 ganancias totales: 125564.0
+Videojuegos DOOM 21455, numero de ventas= 10, con precio= 52.0 ganancias totales: 520.0
+Videojuegos COOKING MAMA, numero de ventas= 10000, con precio= 5.0 ganancias totales: 50000.0
