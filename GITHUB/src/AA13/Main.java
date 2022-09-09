@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -128,6 +130,16 @@ public class Main {
 			//System.out.println(parte);
 			pelis.add(new Peliculas(parte, clase[0].replace("_", " ").substring(0, pos2)));
 		}
+		
+		
+		Collections.sort(pelis, new Comparator<Peliculas>() {
+			@Override
+			public int compare(Peliculas p1, Peliculas p2) {
+				return p2.getRecaudacion().compareTo(p1.getRecaudacion());
+			}
+		});
+		
+		System.out.println(pelis);
 		
 		FileWriter writer = new FileWriter("top20_mejores_peliculas.txt"); 
 		for(Peliculas str: pelis) {
