@@ -1,0 +1,4 @@
+Chocolate nombre=Chocolate Blanco, cantidad=0
+Chocolate nombre=Chocolate Negro, cantidad=0
+Chocolate nombre=Chocolate con almendras, cantidad=0
+Chocolate nombre=Chocolate en rama, cantidad=0

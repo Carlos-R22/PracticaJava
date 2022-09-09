@@ -7,7 +7,7 @@ steps{
 script{ 
 def fecha = LocalDate.now() 
 def texto = 'Hola Mundo! EL día de hoy es elDia' + fecha.getDayOfWeek() + '.' 
-def texto2 = ' Este curso me hizo programar mas de lo que me hubiese gustado' ' 
+def texto2 = ' Este curso me hizo programar mas de lo que me hubiese gustado'
 println texto 
 println texto2 
 } 
