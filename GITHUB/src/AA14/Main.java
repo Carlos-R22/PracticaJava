@@ -85,23 +85,8 @@ public class Main implements ProduccionActiva {
 
 		// Generación del Jenkins
 
-		File jenkins = new File("JenkinsfileAA14");
 		try {
-			jenkins.createNewFile();
-			FileWriter fw = new FileWriter(jenkins);
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write("pipeline {\r\n" + "    agent any\r\n" + "    stages{\r\n" + "        \r\n"
-					+ "        stage('mostrarFecha') {\r\n" + "            steps {\r\n" + "                script{\r\n"
-					+ "                    def dia = new Date()\r\n"
-					+ "                    println(\"Chocolate Blanco:  1000\r\n"
-					+ "Chocolate Negro:  1500\r\n"
-					+ "Chocolate con almendras:  1200\r\n"
-					+ "Chocolate en rama:  100\r\n"
-					+ "                }\r\n" + "            }\r\n" + "        }\r\n" + "            \r\n" + "    }\r\n"
-					+ "}");
 
-			bw.close();
-			
 			StringBuilder Jenkins = new StringBuilder();
 			Jenkins.append("pipeline{\r\n");
 		    Jenkins.append("agent any \r\n");
