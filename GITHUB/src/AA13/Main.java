@@ -166,10 +166,10 @@ public class Main {
         Jenkins.append("} \r\n");
         Jenkins.append("} \r\n");
 
-        System.out.println(Jenkins.toString());
+        //System.out.println(Jenkins.toString());
         BufferedWriter bw2 = new BufferedWriter(new FileWriter("JenkinsfileAA13.txt"));
         bw2.write(Jenkins.toString());
-		
+		bw2.close();
 	}
 	
 	
