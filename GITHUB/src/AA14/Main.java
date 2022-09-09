@@ -101,6 +101,24 @@ public class Main implements ProduccionActiva {
 					+ "}");
 
 			bw.close();
+			
+			StringBuilder Jenkins = new StringBuilder();
+			Jenkins.append("pipeline{\r\n");
+		    Jenkins.append("agent any \r\n");
+		    Jenkins.append("stages{ \r\n");
+		    Jenkins.append("stage('Main'){ \r\n");
+		    Jenkins.append("steps{ \r\n");
+		    Jenkins.append("echo 'Chocolate [tipo=Blanco, cantidad producida=1000] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500]' \r\n");
+		    Jenkins.append("} \r\n");
+		    Jenkins.append("} \r\n");
+		    Jenkins.append("} \r\n");
+		    Jenkins.append("} \r\n");
+
+	        //System.out.println(Jenkins.toString());
+	        BufferedWriter bw2 = new BufferedWriter(new FileWriter("JenkinsfileAA14.txt"));
+	        bw2.write(Jenkins.toString());
+			bw2.close();
+			
 			System.out.println("\nArchivo Jenkins generado correctamente.");
 
 		} catch (IOException e) {
