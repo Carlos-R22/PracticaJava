@@ -1,0 +1,10 @@
+pipeline{
+agent any 
+stages{ 
+stage('Main'){ 
+steps{ 
+echo 'Chocolate [tipo=Blanco, cantidad producida=1000] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500] Chocolate [tipo=Negro, cantidad producida=1500]' 
+} 
+} 
+} 
+} 
