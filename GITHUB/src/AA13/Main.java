@@ -156,8 +156,8 @@ public class Main {
         Jenkins.append("steps{ \r\n");
         Jenkins.append("script{ \r\n");
         Jenkins.append("def fecha = LocalDate.now() \r\n");
-        Jenkins.append("def texto = 'Hola Mundo! EL día de hoy es elDia' + fecha.getDayOfWeek() + '.' \r\n");
-        Jenkins.append("def texto2 = ' Este curso me hizo programar mas de lo que me hubiese gustado' \r\n");
+        Jenkins.append("def texto = 'Hola Mundo! EL día de hoy es elDia' + fecha.getDayOfWeek() \r\n");
+        Jenkins.append("def texto2 = 'Este curso me hizo programar mas de lo que me hubiese gustado.' \r\n");
         Jenkins.append("println texto \r\n");
         Jenkins.append("println texto2 \r\n");
         Jenkins.append("} \r\n");
