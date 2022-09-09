@@ -9,6 +9,51 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/*
+ *(!) AA14 (!)
+ESTRUCTURA DEL PROGRAMA:
+- Proyecto Maven (Lo van a necesitar para el JSON)
+- Herencia entre clases
+- Implementación de una interfaz
+- Conectividad con Github
+- JSON / API
+- Implementar un jenkinsfile
+
+PROBLEMATICA:
+Nos contrataron desde la empresa Charlie y la fabrica de chocolate situados en Sevilla para ayudarlos a mejorar su sistema de generación de chocolates. Para esto, el cliente nos dio algunas
+especificaciones. Al ser una fabrica de chocolates, tienen en consideración las condiciones climaticas, ya que si la temperatura actual es mayor a 40° no se fabrican
+chocolates ese día dado que existe un riesgo de que el mismo se derrita. Si las condiciones climaticas son favorables la producción se hace habitualmente.
+Para informar al cliente de como esta yendo el proceso, nos pidio que se lo informemos a traves de un archivo plano. Informandole por producto las cantidades generadas
+diariamente. 
+
+ESPECIFICACIONES TECNICAS:
+- El programa debe conectar con Github y dejar el codigo en la rama de Desarrollo
+- Obtener la información del clima a traves de la API del sitio https://www.el-tiempo.net/
+- La interfaz debe implementar el metodo produccionActiva() que es la que indica si ese día se produce chocolate o no.
+- Clase Chocolate que herede de la clase Golosina con sus respectivos atributos.
+- El jenkinsfile debe mostrar la información por consola de los chocolates generados. 
+
+ENTREGABLES:
+- Codigo del proyecto
+- Captura de consola de jenkins
+- Captura de consola de Java. La consola de Java debe informar si se puede producir chocolate o no, y en el caso de poderse, informar que fue lo que se produjo
+el día de hoy. 
+
+SET DE DATOS:
+Nombre					CANTIDAD PRODUCIDA
+- Chocolate Blanco			1000
+- Choclate Negro			1500
+- Chocolate con almendras		1200
+- Chocolate con castañas de caju	1300
+- Chocolate en rama			100
+- Chocolate con 70% de cacao		1500
+
+
+https://www.el-tiempo.net/api/json/v2/provincias/41/municipios/41001
+ */
+
+
 public class Main implements ProduccionActiva {
 	public boolean produccionActiva(int temperatura) {
 		boolean hayProduccion = false;
