@@ -84,7 +84,6 @@ public class Main {
 				JSONArray arrayJSON = (JSONArray) objetoJSON.get("facet_groups");
 				objetoJSON = (JSONObject) arrayJSON.get(1);
 				arrayJSON = (JSONArray) objetoJSON.get("facets");
-				// System.out.println(arrayJSON);
 				List<Capital> listaProvincia = new ArrayList<>();
 				for (Object iter : arrayJSON) {
 					new Provincia(((JSONObject) iter).getString("name").toString());
@@ -101,27 +100,6 @@ public class Main {
 					writer.write(listaProvincia.toString());
 				}
 				
-				/*StringBuilder Jenkins = new StringBuilder();
-				Jenkins.append("pipeline{\r\n");
-			    Jenkins.append("agent any \r\n");
-			    Jenkins.append("stages{ \r\n");
-			    Jenkins.append("stage('Salida'){ \r\n");
-			    Jenkins.append("steps{ \r\n");
-			    Jenkins.append("script{ \r\n");
-			    Jenkins.append("def data = readFile(file:\"APIcapitales.txt\")\r\n");
-			    Jenkins.append("println(data) \r\n");
-			    Jenkins.append("} \r\n");
-			    Jenkins.append("} \r\n");
-			    Jenkins.append("} \r\n");
-			    Jenkins.append("} \r\n");
-			    Jenkins.append("} \r\n");
-
-		        //System.out.println(Jenkins.toString());
-		        BufferedWriter bw2 = new BufferedWriter(new FileWriter("JenkinsfileAA15.txt"));
-		        bw2.write(Jenkins.toString());
-				bw2.close();
-				
-				System.out.println("\nArchivo Jenkins generado correctamente.");*/
 
 				salidaTXT(listaProvincia, u1);
 			
@@ -135,28 +113,28 @@ public class Main {
 		
 	}
 
-	public static void salidaTXT(List<Capital> prov, Usuario usr) {
-        List<String> jenk = new ArrayList<>();
+	public static void salidaTXT(List<Capital> prov, Usuario user) {
+        List<String> jenkins = new ArrayList<>();
 
-        jenk.add("pipeline{");
-        jenk.add("    agent any");
-        jenk.add("    stages{");
-        jenk.add("        stage('AA15'){");
-        jenk.add("            steps{");
-        jenk.add("                script{");
-        jenk.add("                    println '" + usr.getNombre() +"'  con ID '" + usr.getID() +" ' registrado en fecha de '" + LocalDate.now() + "'");
+        jenkins.add("pipeline{");
+        jenkins.add("    agent any");
+        jenkins.add("    stages{");
+        jenkins.add("        stage('AA15'){");
+        jenkins.add("            steps{");
+        jenkins.add("                script{");
+        jenkins.add("                    println '" + user.getNombre() +"'  con ID '" + user.getID() +"' registrado en fecha de '" + LocalDate.now() + "'");
            
         for(Capital iter:prov) {
-                jenk.add("                    println '" + iter.getProvincia() +"'       '"+ iter.getCapital() +" '");
+                jenkins.add("                    println '" + iter.getProvincia() +"'       '"+ iter.getCapital() +" '");
             }
-        jenk.add("                }");
-        jenk.add("            }");
-        jenk.add("        }");
-        jenk.add("    }");
-        jenk.add("}");
+        jenkins.add("                }");
+        jenkins.add("            }");
+        jenkins.add("        }");
+        jenkins.add("    }");
+        jenkins.add("}");
         Path file = Paths.get("JenkinsfileAA15");
         try {
-            Files.write(file, jenk, StandardCharsets.UTF_8);
+            Files.write(file, jenkins, StandardCharsets.UTF_8);
             System.out.println("Archivo Jenkins generado correctamente.");
         } catch (IOException e) {
             System.out.println("Excepción en el write().");
