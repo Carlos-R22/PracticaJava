@@ -4,7 +4,7 @@ pipeline{
         stage('AA15'){
             steps{
                 script{
-                    println 'Cas'  con ID '12' registrado en fecha de '2022-09-12'
+                    println 'Carlos  con ID 123 registrado en fecha de 2022-09-12'
                     println 'A Coruña'       'A Coruña '
                     println 'Alacant'       'Alacant '
                     println 'Albacete'       'Albacete '

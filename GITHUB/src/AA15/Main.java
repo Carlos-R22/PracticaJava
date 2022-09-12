@@ -122,7 +122,7 @@ public class Main {
         jenkins.add("        stage('AA15'){");
         jenkins.add("            steps{");
         jenkins.add("                script{");
-        jenkins.add("                    println '" + user.getNombre() +"'  con ID '" + user.getID() +"' registrado en fecha de '" + LocalDate.now() + "'");
+        jenkins.add("                    println '" + user.getNombre() +"  con ID " + user.getID() +" registrado en fecha de " + LocalDate.now() + "'");
            
         for(Capital iter:prov) {
                 jenkins.add("                    println '" + iter.getProvincia() +"'       '"+ iter.getCapital() +" '");
