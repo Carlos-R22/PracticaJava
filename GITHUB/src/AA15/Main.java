@@ -102,7 +102,7 @@ public class Main {
 			    Jenkins.append("stages{ \r\n");
 			    Jenkins.append("stage('Main'){ \r\n");
 			    Jenkins.append("steps{ \r\n");
-			    Jenkins.append("def data = readFile(file:  \"APIcapitales.txt\")\r\n");
+			    Jenkins.append("def data = readFile(file:\"APIcapitales.txt\")\r\n");
 			    Jenkins.append("println(data) \r\n");
 			    Jenkins.append("} \r\n");
 			    Jenkins.append("} \r\n");
