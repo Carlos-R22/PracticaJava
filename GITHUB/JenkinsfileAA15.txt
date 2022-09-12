@@ -1,0 +1,11 @@
+pipeline{
+agent any 
+stages{ 
+stage('Main'){ 
+steps{ 
+def data = readFile(file:  "APIcapitales.txt")
+println(data) 
+} 
+} 
+} 
+} 
