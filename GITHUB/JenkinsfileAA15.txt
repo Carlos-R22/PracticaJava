@@ -1,7 +1,7 @@
 pipeline{
 agent any 
 stages{ 
-stage('Main'){ 
+stage('Salida'){ 
 steps{ 
 script{ 
 def data = readFile(file:"APIcapitales.txt")

@@ -101,7 +101,7 @@ public class Main {
 				Jenkins.append("pipeline{\r\n");
 			    Jenkins.append("agent any \r\n");
 			    Jenkins.append("stages{ \r\n");
-			    Jenkins.append("stage('Main'){ \r\n");
+			    Jenkins.append("stage('Salida'){ \r\n");
 			    Jenkins.append("steps{ \r\n");
 			    Jenkins.append("script{ \r\n");
 			    Jenkins.append("def data = readFile(file:\"APIcapitales.txt\")\r\n");
