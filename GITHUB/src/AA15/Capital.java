@@ -31,7 +31,7 @@ public class Capital extends Provincia{
 
 	@Override
 	public String toString() {
-		return "Capital: " + capital + ", Provincia: " + getProvincia().toString();
+		return "Capital: " + capital + ", Provincia: " + getProvincia();
 	}
 	
 	

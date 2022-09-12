@@ -6,6 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +85,7 @@ public class Main {
 				objetoJSON = (JSONObject) arrayJSON.get(1);
 				arrayJSON = (JSONArray) objetoJSON.get("facets");
 				// System.out.println(arrayJSON);
-				List<Provincia> listaProvincia = new ArrayList<>();
+				List<Capital> listaProvincia = new ArrayList<>();
 				for (Object iter : arrayJSON) {
 					new Provincia(((JSONObject) iter).getString("name").toString());
 					listaProvincia.add(
@@ -95,9 +99,9 @@ public class Main {
 					writer.write(u1.toString());
 					writer.newLine();
 					writer.write(listaProvincia.toString());
-
 				}
-				StringBuilder Jenkins = new StringBuilder();
+				
+				/*StringBuilder Jenkins = new StringBuilder();
 				Jenkins.append("pipeline{\r\n");
 			    Jenkins.append("agent any \r\n");
 			    Jenkins.append("stages{ \r\n");
@@ -117,8 +121,10 @@ public class Main {
 		        bw2.write(Jenkins.toString());
 				bw2.close();
 				
-				System.out.println("\nArchivo Jenkins generado correctamente.");
+				System.out.println("\nArchivo Jenkins generado correctamente.");*/
 
+				salidaTXT(listaProvincia, u1);
+			
 			}
 			teclado.close();
 			
@@ -126,8 +132,38 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
+		
 	}
 
+	public static void salidaTXT(List<Capital> prov, Usuario usr) {
+        List<String> jenk = new ArrayList<>();
+
+        jenk.add("pipeline{");
+        jenk.add("    agent any");
+        jenk.add("    stages{");
+        jenk.add("        stage('AA15'){");
+        jenk.add("            steps{");
+        jenk.add("                script{");
+        jenk.add("                    println '" + usr.getNombre() +"'  con ID '" + usr.getID() +" ' registrado en fecha de '" + LocalDate.now() + "'");
+           
+        for(Capital iter:prov) {
+                jenk.add("                    println '" + iter.getProvincia() +"'       '"+ iter.getCapital() +" '");
+            }
+        jenk.add("                }");
+        jenk.add("            }");
+        jenk.add("        }");
+        jenk.add("    }");
+        jenk.add("}");
+        Path file = Paths.get("JenkinsfileAA15");
+        try {
+            Files.write(file, jenk, StandardCharsets.UTF_8);
+            System.out.println("Archivo Jenkins generado correctamente.");
+        } catch (IOException e) {
+            System.out.println("Excepción en el write().");
+            e.printStackTrace();
+        }
+    }
+	
 	interface salidaTXT {
 		public void salidaTXT();
 	}
