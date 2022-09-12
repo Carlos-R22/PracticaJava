@@ -93,6 +93,7 @@ public class Main {
 				File file = new File("APIcapitales.txt");
 				try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
 					writer.write(u1.toString());
+					writer.newLine();
 					writer.write(listaProvincia.toString());
 
 				}
