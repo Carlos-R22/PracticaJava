@@ -125,7 +125,7 @@ public class Main {
         jenkins.add("                    println '" + user.getNombre() +"  con ID " + user.getID() +" registrado en fecha de " + LocalDate.now() + "'");
            
         for(Capital iter:prov) {
-                jenkins.add("                    println '" + iter.getProvincia() +"       "+ iter.getCapital() +"'");
+                jenkins.add("                    println 'Provincia: " + iter.getProvincia() +", Capital: "+ iter.getCapital() +"'");
             }
         jenkins.add("                }");
         jenkins.add("            }");
