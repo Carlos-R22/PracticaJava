@@ -1,0 +1,15 @@
+AA21
+Una empresa dedicada a la realización de capacitaciones desea realizar la base de datos para administrar las capacitaciones
+ofrecidas y los clientes que los contratan.
+De los capacitadores sabemos que:
+a) En cada capacitación pueden participar más de un capacitador y un capacitador puede participar en más de un
+capacitación.
+De los oradores sabemos que:
+a) Una capacitacion tiene solamente un orador, y el orador sólo participa en un tipo de capacitación.
+Cada capacitación está armado con un orador y -si correspondiese- capacitador . Es decir, cuando un cliente
+contrata una capacitación, lo contrata tal cual está armado. Por ejemplo, la capacitacion 010 es una TED que vale
+$500 y que tiene un orador y cuatro capacitadores. Sin embargo, el precio de la capacitación puede variar al
+precio base por la forma de pago elegida con la empresa de eventos.
+
+Un cliente puede contratar varios tipos de capacitaciones, y una capacitación es contratato por varios clientes. Sin embargo,
+tenga en cuenta que una capacitación puede no haber sido contratado por ningún cliente.
